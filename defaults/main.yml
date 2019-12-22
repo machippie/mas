@@ -16,7 +16,7 @@ mas_password:
 #   - id: 12345
 #     name: app2
 # @end
-mas_install_apps: []
+mas_remove_apps: []
 
 # @var mas_install_apps:description: List of apps to install
 # @var mas_install_apps:example: >
