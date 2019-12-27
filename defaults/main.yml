@@ -1,0 +1,33 @@
+---
+# @var mas_user:description: User to run user-specific commands
+# @var mas_user:value: mas_user | default(homebrew_user) | default(ansible_user_id)
+# mas_user:
+
+# @var mas_email:description: Email to login to Appstore
+mas_email:
+
+# @var mas_password:description: Password to login to Appstore
+mas_password:
+
+# @var mas_remove_apps:description: List of apps to remove
+# @var mas_remove_apps:example: >
+# mas_remove_apps:
+#   - app1
+#   - id: 12345
+#     name: app2
+# @end
+mas_remove_apps: []
+
+# @var mas_install_apps:description: List of apps to install
+# @var mas_install_apps:example: >
+# mas_install_apps:
+#   - app1
+#   - id: 12345
+#     name: app2
+# @end
+mas_install_apps: []
+
+# @var mas_upgrade:description: Perform an upgrade for all apps
+mas_upgrade: False
+
+...
