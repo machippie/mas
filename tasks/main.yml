@@ -20,7 +20,7 @@
     - name: Check account status
       register: mas_account_result
       failed_when: mas_account_result.rc > 1
-      changed_when: false
+      changed_when: False
       command: mas account
       tags:
         - mas
@@ -85,3 +85,5 @@
       command: mas upgrade
       tags:
         - mas
+
+...
