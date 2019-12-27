@@ -12,13 +12,13 @@
       ignore_errors: True
       homebrew:
         name: mas
-        greedy: True
         state: present
       tags:
         - tunnelblick
 
     - name: Check account status
       register: mas_account_result
+      check_mode: False
       failed_when: mas_account_result.rc > 1
       changed_when: False
       command: mas account
