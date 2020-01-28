@@ -17,7 +17,7 @@ tell application "System Events"
             delay 3
         end try
 
-{% if ansible_distribution_version is version('10.15' '<') %}
+{% if ansible_distribution_version is version("10.15", "<") %}
         click menu item 15 of menu "Store" of menu bar item "Store" of menu bar 1
 {% else %}
         click menu item 16 of menu "Store" of menu bar item "Store" of menu bar 1
