@@ -23,19 +23,14 @@ tell application "System Events"
         click menu item 16 of menu "Store" of menu bar item "Store" of menu bar 1
 {% endif %}
         delay 2
-
         set focused of text field "Apple ID:" of sheet 1 of window 1 to true
         delay 2
-
         tell application "System Events" to keystroke "{{ mas_email }}"
         delay 2
-
         tell application "System Events" to keystroke return
         delay 2
-
         tell application "System Events" to keystroke "{{ mas_password }}"
         delay 2
-
         tell application "System Events" to keystroke return
     end tell
 end tell

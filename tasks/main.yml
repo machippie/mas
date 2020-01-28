@@ -14,7 +14,7 @@
         name: mas
         state: present
       tags:
-        - tunnelblick
+        - mas
 
     - name: Check account status
       register: mas_account_result
