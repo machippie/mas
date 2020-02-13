@@ -21,7 +21,7 @@
       check_mode: False
       failed_when: mas_account_result.rc > 1
       changed_when: False
-      command: mas account
+      command: /usr/local/bin/mas account
       tags:
         - mas
 
@@ -62,27 +62,27 @@
       register: mas_list_result
       check_mode: False
       changed_when: False
-      command: mas list
+      command: /usr/local/bin/mas list
       tags:
         - mas
 
     - name: Remove defined apps
       loop: '{{ mas_remove_apps }}'
       when: (item.id | default(item) | string) in mas_list_result.stdout
-      command: mas uninstall "{{ item.id | default(item) }}"
+      command: /usr/local/bin/mas uninstall "{{ item.id | default(item) }}"
       tags:
         - mas
 
     - name: Install defined apps
       loop: '{{ mas_install_apps }}'
       when: (item.id | default(item) | string) not in mas_list_result.stdout
-      command: mas install "{{ item.id | default(item) }}"
+      command: /usr/local/bin/mas install "{{ item.id | default(item) }}"
       tags:
         - mas
 
     - name: Upgrade installed apps
       when: mas_upgrade
-      command: mas upgrade
+      command: /usr/local/bin/mas upgrade
       tags:
         - mas
 
