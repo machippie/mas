@@ -66,13 +66,6 @@
       tags:
         - mas
 
-    - name: Remove defined apps
-      loop: '{{ mas_remove_apps }}'
-      when: (item.id | default(item) | string) in mas_list_result.stdout
-      command: /usr/local/bin/mas uninstall "{{ item.id | default(item) }}"
-      tags:
-        - mas
-
     - name: Install defined apps
       loop: '{{ mas_install_apps }}'
       when: (item.id | default(item) | string) not in mas_list_result.stdout
@@ -85,5 +78,12 @@
       command: /usr/local/bin/mas upgrade
       tags:
         - mas
+
+- name: Remove defined apps
+  loop: '{{ mas_remove_apps }}'
+  when: (item.id | default(item) | string) in mas_list_result.stdout
+  command: /usr/local/bin/mas uninstall "{{ item.id | default(item) }}"
+  tags:
+    - mas
 
 ...
